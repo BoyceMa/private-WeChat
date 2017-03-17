@@ -4,7 +4,8 @@
  */
 package com.saic.ebiz.market.common.entity.qrcode;
 
-import com.meidusa.fastjson.JSONObject;
+import com.alibaba.fastjson.JSONObject;
+
 
 /**
  * @author hejian

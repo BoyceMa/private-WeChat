@@ -13,12 +13,12 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
+import com.alibaba.fastjson.JSONObject;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import com.google.common.cache.RemovalListener;
 import com.google.common.cache.RemovalNotification;
-import com.meidusa.fastjson.JSONObject;
 import com.saic.ebiz.component.wx.entity.AppIdSecret;
 import com.saic.ebiz.component.wx.entity.Token;
 import com.saic.ebiz.component.wx.util.CommonUtil;

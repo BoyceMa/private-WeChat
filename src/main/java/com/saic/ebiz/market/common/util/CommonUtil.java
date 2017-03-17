@@ -152,7 +152,7 @@ public class CommonUtil {
 
     public static JSONObject generatePermanentQrcode(String appid,String appsecret,Qrcode qrcode,String token){
     	String requestUrl = QRCODE_URL + token;
-    	return httpsRequest(requestUrl,"POST",com.meidusa.fastjson.JSONObject.toJSONString(qrcode));
+    	return httpsRequest(requestUrl,"POST",com.alibaba.fastjson.JSONObject.toJSONString(qrcode));
     }
     
     
@@ -186,7 +186,7 @@ public class CommonUtil {
     
     public static void sendMessage(String accessToken,String openid, String text){
 		requestUrl = requestUrl.replace("AT", accessToken);
-		String jsonMessage = com.meidusa.fastjson.JSONObject.toJSONString(buildObject(openid, text));
+		String jsonMessage = com.alibaba.fastjson.JSONObject.toJSONString(buildObject(openid, text));
 		CommonUtil.httpsRequest(requestUrl, "POST", jsonMessage);
 	}
     

@@ -17,12 +17,12 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.commons.codec.binary.Base64;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.meidusa.toolkit.common.util.Base64;
 import com.saic.ebiz.market.common.constant.Constants;
 import com.saic.ebiz.market.common.entity.response.TextMessageReponse;
 import com.saic.ebiz.market.common.util.ImageUtil;
@@ -178,13 +178,13 @@ public class CoreService {
 	}
 	
 	public static void main(String[] args) throws UnsupportedEncodingException {
-		String content = Base64.encode("328活动，还有呢？".getBytes());
+		String content = Base64.encodeBase64String("328活动，还有呢？".getBytes("UTF-8"));
 		content = URLEncoder.encode(content,"UTF-8");
 		System.out.println(content);
 		content = "MzI45rS75Yqo77yM6L+Y5pyJ5ZGi77yf";
 		content = URLDecoder.decode(content,"UTF-8");
 		System.out.println(content);
-//		System.out.println(new String(Base64.decode(content)));
+		System.out.println(new String(Base64.decodeBase64(content),"UTF-8"));
 	}
 }
 
