@@ -25,13 +25,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.alibaba.fastjson.JSONObject;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import com.google.common.cache.RemovalListener;
 import com.google.common.cache.RemovalNotification;
-import com.meidusa.fastjson.JSONObject;
-import com.meidusa.venus.validate.util.URLUtil;
 import com.saic.ebiz.market.common.constant.Constants;
 import com.saic.ebiz.market.common.entity.authentication.Oauth2Token;
 import com.saic.ebiz.market.common.entity.authentication.SNSUserInfo;
@@ -161,6 +160,5 @@ public class AuthorizationController {
 		str = str.substring(0, str.length() - 2);
 		System.out.println(new String(Base64.decodeBase64(str),"UTF-8"));
 		
-		System.out.println(URLUtil.verifyUrl("http://www.baidu.com"));
 	}
 }

@@ -6,19 +6,19 @@ package com.saic.ebiz.component.wx.job;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.collections.CollectionUtils;
+//import org.apache.commons.collections.CollectionUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Component;
 
+import com.alibaba.fastjson.JSONPObject;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
 import com.google.common.cache.RemovalListener;
 import com.google.common.cache.RemovalNotification;
-import com.meidusa.fastjson.JSONObject;
 import com.saic.ebiz.component.wx.entity.AppIdSecret;
 import com.saic.ebiz.component.wx.entity.Token;
 import com.saic.ebiz.component.wx.util.CommonUtil;
@@ -96,8 +96,8 @@ public class AccessTokenJob implements InitializingBean, DisposableBean {
 	
 	public static void main(String[] args) throws ExecutionException {
 		System.out.println("".split(" |,").length);
-		System.out.println(CollectionUtils.sizeIsEmpty("".split(" |,")));
-		System.out.println(JSONObject.toJSONString("".split(" |,")));
+//		System.out.println(CollectionUtils.sizeIsEmpty("".split(" |,")));
+//		System.out.println(JSONPObject.toJSONString("".split(" |,")));
 		
 		System.out.println(new AccessTokenJob().getAccessToken(null));
 	}

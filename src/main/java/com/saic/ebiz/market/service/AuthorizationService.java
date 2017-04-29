@@ -9,9 +9,6 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-import net.sf.json.JSONArray;
-import net.sf.json.JSONObject;
-
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -25,6 +22,9 @@ import com.saic.ebiz.market.common.entity.authentication.Oauth2Token;
 import com.saic.ebiz.market.common.entity.authentication.SNSUserInfo;
 import com.saic.ebiz.market.common.util.CommonUtil;
 import com.saic.ebiz.market.common.util.PropertiesUtil;
+
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
 
 /**
  * 参考
@@ -165,7 +165,7 @@ public class AuthorizationService {
 				logger.error("获取网页授权凭证失败 errCode : {} , errmsg : {} ", errCode,errMsg);
 			}
 		}
-		logger.info("getOauth2Token => 返回 ：" + com.meidusa.fastjson.JSONObject.toJSONString(oauth2Token)); 
+		logger.info("getOauth2Token => 返回 ：" + com.alibaba.fastjson.JSONObject.toJSONString(oauth2Token)); 
 		return oauth2Token;
 	}
 	
@@ -196,7 +196,7 @@ public class AuthorizationService {
 				logger.error("刷新网页授权凭证失败 errCode : {} , errmsg : {} ", errCode,errMsg);
 			}
 		}
-		logger.info("refreshOauth2Token => 返回 ：" + com.meidusa.fastjson.JSONObject.toJSONString(oauth2Token)); 
+		logger.info("refreshOauth2Token => 返回 ：" + com.alibaba.fastjson.JSONObject.toJSONString(oauth2Token)); 
 		return oauth2Token;
 	}
 
@@ -215,8 +215,8 @@ public class AuthorizationService {
 		JSONObject jsonObject = CommonUtil.httpsRequest(requestUrl, "GET", null);
 		if(null != jsonObject){
 //			logger.info("授权返回JSONObject 数据 : " + com.meidusa.fastjson.JSONObject.toJSONString(jsonObject));
-			logger.info("授权返回JSONObject 数据 : Key : {}, values : {} " ,com.meidusa.fastjson.JSONObject.toJSONString(jsonObject.keySet()), 
-					com.meidusa.fastjson.JSONObject.toJSONString(jsonObject.values()));
+			logger.info("授权返回JSONObject 数据 : Key : {}, values : {} " ,com.alibaba.fastjson.JSONObject.toJSONString(jsonObject.keySet()), 
+					com.alibaba.fastjson.JSONObject.toJSONString(jsonObject.values()));
 			try{
 				user = new SNSUserInfo();
 				user.setOpenId(jsonObject.getString("openid"));
@@ -235,7 +235,7 @@ public class AuthorizationService {
 				logger.error("网页授权获取用户信息失败 errCode : {} , errmsg : {} ", errCode,errMsg);
 			}
 		}
-		logger.info("getUserInfo => 返回  : " + com.meidusa.fastjson.JSONObject.toJSONString(user));
+		logger.info("getUserInfo => 返回  : " + com.alibaba.fastjson.JSONObject.toJSONString(user));
 		return user;		
 	}
 	/**

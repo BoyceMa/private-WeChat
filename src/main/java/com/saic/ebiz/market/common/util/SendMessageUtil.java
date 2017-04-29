@@ -5,7 +5,8 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.meidusa.fastjson.JSONObject;
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.JSONPObject;
 import com.saic.ebiz.market.common.entity.response.Article;
 import com.saic.ebiz.market.common.entity.response.SendImageMessage;
 import com.saic.ebiz.market.common.entity.response.SendImageMessage.ImageContent;

@@ -9,8 +9,6 @@
 package com.saic.ebiz.market.service;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URLDecoder;
-import java.net.URLEncoder;
 import java.util.Date;
 import java.util.Map;
 
@@ -22,7 +20,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import com.meidusa.toolkit.common.util.Base64;
 import com.saic.ebiz.market.common.constant.Constants;
 import com.saic.ebiz.market.common.entity.response.TextMessageReponse;
 import com.saic.ebiz.market.common.util.ImageUtil;
@@ -178,12 +175,6 @@ public class CoreService {
 	}
 	
 	public static void main(String[] args) throws UnsupportedEncodingException {
-		String content = Base64.encode("328活动，还有呢？".getBytes());
-		content = URLEncoder.encode(content,"UTF-8");
-		System.out.println(content);
-		content = "MzI45rS75Yqo77yM6L+Y5pyJ5ZGi77yf";
-		content = URLDecoder.decode(content,"UTF-8");
-		System.out.println(content);
 //		System.out.println(new String(Base64.decode(content)));
 	}
 }

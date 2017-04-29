@@ -23,9 +23,6 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 
-import net.sf.json.JSONException;
-import net.sf.json.JSONObject;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -35,6 +32,9 @@ import com.saic.ebiz.market.common.entity.qrcode.Qrcode;
 import com.saic.ebiz.market.common.entity.response.SendTextMessage;
 import com.saic.ebiz.market.common.entity.response.SendTextMessage.TextContent;
 import com.saic.ebiz.market.common.enumeration.MessageType;
+
+import net.sf.json.JSONException;
+import net.sf.json.JSONObject;
 
 
 /**
@@ -152,7 +152,7 @@ public class CommonUtil {
 
     public static JSONObject generatePermanentQrcode(String appid,String appsecret,Qrcode qrcode,String token){
     	String requestUrl = QRCODE_URL + token;
-    	return httpsRequest(requestUrl,"POST",com.meidusa.fastjson.JSONObject.toJSONString(qrcode));
+    	return httpsRequest(requestUrl,"POST",com.alibaba.fastjson.JSONObject.toJSONString(qrcode));
     }
     
     
@@ -186,7 +186,7 @@ public class CommonUtil {
     
     public static void sendMessage(String accessToken,String openid, String text){
 		requestUrl = requestUrl.replace("AT", accessToken);
-		String jsonMessage = com.meidusa.fastjson.JSONObject.toJSONString(buildObject(openid, text));
+		String jsonMessage = com.alibaba.fastjson.JSONObject.toJSONString(buildObject(openid, text));
 		CommonUtil.httpsRequest(requestUrl, "POST", jsonMessage);
 	}
     

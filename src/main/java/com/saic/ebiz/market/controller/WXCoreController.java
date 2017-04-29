@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.meidusa.fastjson.JSONObject;
+import com.alibaba.fastjson.JSONObject;
 import com.saic.ebiz.market.common.constant.Constants;
 import com.saic.ebiz.market.common.util.MessageUtil;
 import com.saic.ebiz.market.common.util.SignUtil;

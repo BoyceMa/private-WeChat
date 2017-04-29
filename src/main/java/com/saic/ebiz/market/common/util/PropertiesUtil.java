@@ -9,8 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
-import com.meidusa.toolkit.common.bean.config.ConfigUtil;
-
 
 /****
  * 
@@ -26,10 +24,6 @@ public class PropertiesUtil {
 	 * 本地属性对象
 	 */
 	public static final Properties URLPROPS = new Properties();
-	/**
-	 * 远程服务器属性对象
-	 */
-	public static final Properties REMOTEPROPS = ConfigUtil.getProperties();
 
 	/**
 	 * 日志
@@ -51,15 +45,6 @@ public class PropertiesUtil {
 		return URLPROPS.getProperty(key);
 	}
 
-	/**
-	 * 
-	 * @param key
-	 * @return 获取远程服务器的key
-	 */
-	public static String getRemoteValue(String key) {
-		return REMOTEPROPS.getProperty(key);
-	}
-	
 	/**
 	 * 
 	 * @param key weixin.properties文件key
