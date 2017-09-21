@@ -42,6 +42,7 @@
             </beans:bean>
         </message-converters>
         <argument-resolvers>
+            <beans:bean class="com.saic.ebiz.market.interceptor.StringArgumentResolver"></beans:bean>
             <beans:bean class="com.saic.ebiz.market.interceptor.SNSUserInfoArgumentResolver"></beans:bean>
             <beans:bean class="com.saic.ebiz.market.interceptor.Oauth2TokenArgumentResolver"></beans:bean>
         </argument-resolvers>

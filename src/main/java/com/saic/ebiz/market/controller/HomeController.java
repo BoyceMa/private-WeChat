@@ -34,7 +34,7 @@ public class HomeController {
 	
 	@RequestMapping("/index")
 	@BaseOauth(appId = Constants.APP_ID, appSecret = Constants.APP_SECRET)
-	public Oauth2Token home(HttpServletRequest request, Oauth2Token oauth2Token) {
+	public Oauth2Token home(HttpServletRequest request, Oauth2Token oauth2Token, String ssid, String ssid2) {
 		return oauth2Token;
 	}
 	
